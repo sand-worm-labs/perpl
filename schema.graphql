@@ -1,0 +1,1654 @@
+type Exchange_AccountCreated {
+  id: ID!
+  account: String!
+  event_id: BigInt!
+}
+
+type Exchange_AccountFeeTierSet {
+  id: ID!
+  accountId: BigInt!
+  tier: BigInt!
+}
+
+type Exchange_AccountFreeze {
+  id: ID!
+  accountId: BigInt!
+  status: BigInt!
+}
+
+type Exchange_AccountFrozen {
+  id: ID!
+  status: BigInt!
+}
+
+type Exchange_AccountLiquidationCredit {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  startBalanceCNS: BigInt!
+  endBalanceCNS: BigInt!
+}
+
+type Exchange_AdminChanged {
+  id: ID!
+  previousAdmin: String!
+  newAdmin: String!
+}
+
+type Exchange_AdministratorUpdated {
+  id: ID!
+  administrator: String!
+  added: Boolean!
+}
+
+type Exchange_AmountExceedsAvailableBalance {
+  id: ID!
+  amountCNS: BigInt!
+  availableBalanceCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_BankruptcyPricePreventsDeleverage {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  bankruptcyPricePNS: BigInt!
+  markPricePNS: BigInt!
+}
+
+type Exchange_BeaconUpgraded {
+  id: ID!
+  beacon: String!
+}
+
+type Exchange_BlockStatusChanged {
+  id: ID!
+  addr: String!
+  blocked: Boolean!
+}
+
+type Exchange_BorrowMarginNotMetAfterDecCollateral {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  bmrCNS: BigInt!
+  fmvAfterCNS: BigInt!
+}
+
+type Exchange_BuyToLiquidateBuyerRestricted {
+  id: ID!
+  perpId: BigInt!
+  buyer: String!
+}
+
+type Exchange_BuyToLiquidateParamsUpdated {
+  id: ID!
+  perpId: BigInt!
+  insAmtPer100K: BigInt!
+  userAmtPer100K: BigInt!
+  buyerAmtPer100K: BigInt!
+  protAmtPer100K: BigInt!
+}
+
+type Exchange_BuyToLiquidateRestrictionUpdated {
+  id: ID!
+  perpId: BigInt!
+  restrictBuyers: Boolean!
+}
+
+type Exchange_BuyToLiquidateSettled {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderType: BigInt!
+  realizedPricePNS: BigInt!
+  lotLNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_BuyToLiquidateSlippageExceeded {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  positionType: BigInt!
+  markPricePNS: BigInt!
+  limitPricePNS: BigInt!
+}
+
+type Exchange_BuyToLiquidateStarted {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  liquidatorId: BigInt!
+  requestedLotLNS: BigInt!
+  leverageHdths: BigInt!
+  limitPricePNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+}
+
+type Exchange_BuyToLiquidateThresholdUpdated {
+  id: ID!
+  perpId: BigInt!
+  thresholdPer100K: BigInt!
+}
+
+type Exchange_CancelExistingInvalidCloseOrders {
+  id: ID!
+  lockedLotLNS: BigInt!
+  lockedPositionType: BigInt!
+  newPositionType: BigInt!
+}
+
+type Exchange_CannotAdjustEntryPriceToDecCollateral {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  adjustmentAmountCNS: BigInt!
+  entryPricePNS: BigInt!
+  adjustedEntryPricePNS: BigInt!
+  positionType: BigInt!
+}
+
+type Exchange_CantBuyToLiquidate {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  positionType: BigInt!
+  markPricePNS: BigInt!
+  bsLiqPricePNS: BigInt!
+  liqPricePNS: BigInt!
+  bkptPricePNS: BigInt!
+}
+
+type Exchange_CantChangeCloseOrder {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_CantDeleverageAgainstOpposingPositions {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  forceClose: Boolean!
+  positionType: BigInt!
+  deleveragePricePNS: BigInt!
+  sortedPositionIds: [BigInt!]!
+}
+
+type Exchange_CantLiquidatePosAboveMMR {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  positionType: BigInt!
+  markPricePNS: BigInt!
+  liqPricePNS: BigInt!
+}
+
+type Exchange_ChangeExpiredOrderNeedsNewExpiry {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+  accountId: BigInt!
+  expiryBlock: BigInt!
+}
+
+type Exchange_ClearingExpiredOrder {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_ClearingFrozenAccountOrder {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_ClearingInvalidCloseOrder {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_ClearingRemainingOrderLockBeyondBalance {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  pricePNS: BigInt!
+  remainingLotLNS: BigInt!
+  lockedBalanceCNS: BigInt!
+  excessiveLockedBalCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_ClearingSelfMatchingOrder {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_CloseOrderExceedsPosition {
+  id: ID!
+  posLotLNS: BigInt!
+  orderLotLNS: BigInt!
+}
+
+type Exchange_CloseOrderPositionMismatch {
+  id: ID!
+  positionType: BigInt!
+  orderType: BigInt!
+}
+
+type Exchange_CollateralDecreaseDeclined {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  reason: String!
+}
+
+type Exchange_CollateralDecreaseRequestCancelled {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_CollateralDecreaseRequestExpired {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  expiryTS: BigInt!
+  blockTS: BigInt!
+}
+
+type Exchange_CollateralDecreaseRequested {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  expiryTS: BigInt!
+  amountCNS: BigInt!
+  clampToMaximum: Boolean!
+  positionType: BigInt!
+  entryPricePNS: BigInt!
+  lotLNS: BigInt!
+}
+
+type Exchange_CollateralDeposit {
+  id: ID!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_CollateralWithdrawal {
+  id: ID!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_ContractAdded {
+  id: ID!
+  perpId: BigInt!
+  name: String!
+  symbol: String!
+  status: BigInt!
+  basePricePNS: BigInt!
+  priceDecimals: BigInt!
+  lotDecimals: BigInt!
+  takerFeePer100K: BigInt!
+  makerFeePer100K: BigInt!
+  initMarginFracHdths: BigInt!
+  maintMarginFracHdths: BigInt!
+  maxOpenInterestLNS: BigInt!
+  unityDescentThreshHdths: BigInt!
+  overColDescentThreshHdths: BigInt!
+  dcpBorrowThreshHdths: BigInt!
+  priceTolPer100K: BigInt!
+  marginTol: BigInt!
+  marginTolDecimals: BigInt!
+  refPriceMaxAgeSec: BigInt!
+  absFundingClampPctPer100K: BigInt!
+  permCancelMinOrders: BigInt!
+  permCancelSegment: BigInt!
+  insAmtPer100K: BigInt!
+  liqInsAmtPer100K: BigInt!
+  liqUserAmtPer100K: BigInt!
+  btlRestrictBuyers: Boolean!
+  btlPriceThreshPer100K: BigInt!
+  btlInsAmtPer100K: BigInt!
+  btlUserAmtPer100K: BigInt!
+  btlBuyerAmtPer100K: BigInt!
+  numPerpetuals: BigInt!
+}
+
+type Exchange_ContractAddedV2 {
+  id: ID!
+  perpId: BigInt!
+  name: String!
+  symbol: String!
+  status: BigInt!
+  basePricePNS: BigInt!
+  priceDecimals: BigInt!
+  lotDecimals: BigInt!
+  initMarginFracHdths: BigInt!
+  maintMarginFracHdths: BigInt!
+  maxOpenInterestLNS: BigInt!
+  unityDescentThreshHdths: BigInt!
+  overColDescentThreshHdths: BigInt!
+  dcpBorrowThreshHdths: BigInt!
+  priceTolPer100K: BigInt!
+  marginTol: BigInt!
+  marginTolDecimals: BigInt!
+  refPriceMaxAgeSec: BigInt!
+  absFundingClampPctPer100K: BigInt!
+  permCancelMinOrders: BigInt!
+  permCancelSegment: BigInt!
+  insAmtPer100K: BigInt!
+  liqInsAmtPer100K: BigInt!
+  liqUserAmtPer100K: BigInt!
+  btlRestrictBuyers: Boolean!
+  btlPriceThreshPer100K: BigInt!
+  btlInsAmtPer100K: BigInt!
+  btlUserAmtPer100K: BigInt!
+  btlBuyerAmtPer100K: BigInt!
+  numPerpetuals: BigInt!
+  perpFeeSchedId: BigInt!
+}
+
+type Exchange_ContractLinkFeedUpdated {
+  id: ID!
+  perpId: BigInt!
+  feedId: String!
+}
+
+type Exchange_ContractNotOperational {
+  id: ID!
+  perpId: BigInt!
+  status: BigInt!
+}
+
+type Exchange_ContractPaused {
+  id: ID!
+  perpId: BigInt!
+  paused: Boolean!
+}
+
+type Exchange_ContractRemoved {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_ContractVersionSet {
+  id: ID!
+  major: BigInt!
+  minor: BigInt!
+  patch: BigInt!
+}
+
+type Exchange_CrossesBook {
+  id: ID!
+  minAskOrMaxBidPNS: BigInt!
+  maxOrdersChecked: Boolean!
+}
+
+type Exchange_DcpBorrowThreshUpdated {
+  id: ID!
+  perpId: BigInt!
+  threshHdths: BigInt!
+}
+
+type Exchange_DecreaseCollateralBeyondMarkPrice {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  impactAdjPricePNS: BigInt!
+  markPricePNS: BigInt!
+}
+
+type Exchange_DefaultPerpFeeScheduleSet {
+  id: ID!
+  feeSchedId: BigInt!
+  takerFeesPer100K: [BigInt!]!
+  makerFeesPer100K: [BigInt!]!
+}
+
+type Exchange_DefaultRwaFeeScheduleSet {
+  id: ID!
+  feeSchedId: BigInt!
+  takerFeesPer100K: [BigInt!]!
+  makerFeesPer100K: [BigInt!]!
+}
+
+type Exchange_DeleveragePositionListEmpty {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_ExceedsLastExecutionBlock {
+  id: ID!
+  lastExecutionBlock: BigInt!
+}
+
+type Exchange_ExchangeHalted {
+  id: ID!
+  halted: Boolean!
+}
+
+type Exchange_ExchangeInitialized {
+  id: ID!
+  sender: String!
+  collateralToken: String!
+  collateralDecimals: BigInt!
+  minAccountOpenCNS: BigInt!
+  wrlsThousandthsTvl: BigInt!
+  wrlsMinWithdrawLimitCNS: BigInt!
+  recycleFeeCNS: BigInt!
+  whitelistingEnabled: Boolean!
+}
+
+type Exchange_FeeParamsUpdated {
+  id: ID!
+  perpId: BigInt!
+  insAmtPer100K: BigInt!
+}
+
+type Exchange_FeeScheduleMigrated {
+  id: ID!
+  feeSchedId: BigInt!
+  oldTakerFees: [BigInt!]!
+  oldMakerFees: [BigInt!]!
+  newTakerFees: [BigInt!]!
+  newMakerFees: [BigInt!]!
+}
+
+type Exchange_FeeScheduleSet {
+  id: ID!
+  feeSchedId: BigInt!
+  takerFeesPer100K: [BigInt!]!
+  makerFeesPer100K: [BigInt!]!
+}
+
+type Exchange_FeeUnitRedenominated {
+  id: ID!
+  oldDenominator: BigInt!
+  newDenominator: BigInt!
+  unitScale: BigInt!
+  rateDiv: BigInt!
+  migratedScheduleCount: BigInt!
+}
+
+type Exchange_FundingClampPctUpdated {
+  id: ID!
+  perpId: BigInt!
+  clampPctPer100k: BigInt!
+}
+
+type Exchange_FundingEventCompleted {
+  id: ID!
+  perpId: BigInt!
+  fundingEventBlock: BigInt!
+  specifiedRatePct100k: BigInt!
+  actualRatePct100k: BigInt!
+  fundingPricePNS: BigInt!
+  fundingPaymentPNS: BigInt!
+  fundingSumPNS: BigInt!
+  allowOverwrite: Boolean!
+}
+
+type Exchange_FundingEventSetTooEarly {
+  id: ID!
+  perpId: BigInt!
+  blockNumber: BigInt!
+  fundingEventBlock: BigInt!
+}
+
+type Exchange_FundingPriceExceedsTol {
+  id: ID!
+  perpId: BigInt!
+  fundingPricePNS: BigInt!
+  oraclePNS: BigInt!
+  tolerancePer100k: BigInt!
+}
+
+type Exchange_FundingSumAlreadySet {
+  id: ID!
+  perpId: BigInt!
+  fundingEventBlock: BigInt!
+  storageIndex: BigInt!
+  fundingSumOffset: BigInt!
+}
+
+type Exchange_FundingSumScalingExpUpdated {
+  id: ID!
+  perpId: BigInt!
+  newExp: BigInt!
+}
+
+type Exchange_IgnoreOracleUpdated {
+  id: ID!
+  perpId: BigInt!
+  ignOracle: Boolean!
+}
+
+type Exchange_ImmediateOrCancelExecuted {
+  id: ID!
+  unmatchedLotLNS: BigInt!
+  totalLotLNS: BigInt!
+}
+
+type Exchange_IncreasePositionCollateral {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionDepositCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_InitialMarginFractionUpdated {
+  id: ID!
+  perpId: BigInt!
+  initMarginFracHdths: BigInt!
+}
+
+type Exchange_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Exchange_InsolventPositionCannotBeForcedClose {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  positionType: BigInt!
+  bankruptcyPricePNS: BigInt!
+  markPricePNS: BigInt!
+}
+
+type Exchange_InsufficientFundsToDecCollateral {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  withdrawMaxCNS: BigInt!
+}
+
+type Exchange_InsuficientFundsForRecycleFee {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  balanceCNS: BigInt!
+  lockedCNS: BigInt!
+  recycleFeeCNS: BigInt!
+}
+
+type Exchange_InsurancePaymentForSettlement {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  insPaymentCNS: BigInt!
+}
+
+type Exchange_InvalidAccountFrozenOrder {
+  id: ID!
+  orderType: BigInt!
+  immediateOrCancel: Boolean!
+}
+
+type Exchange_InvalidBankruptcyPrice {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  depositCNS: BigInt!
+  posPricePNS: BigInt!
+  liqLotLNS: BigInt!
+  premiumPnlCNS: BigInt!
+}
+
+type Exchange_InvalidExpiryBlock {
+  id: ID!
+  expiryBlock: BigInt!
+  blockNumber: BigInt!
+}
+
+type Exchange_InvalidLinkReportForContract {
+  id: ID!
+  perpId: BigInt!
+  perpFeedId: String!
+  reportFeedId: String!
+}
+
+type Exchange_InvalidLinkReportVersion {
+  id: ID!
+  perpId: BigInt!
+  reportVersion: BigInt!
+}
+
+type Exchange_InvalidLiquidationPrice {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  depositCNS: BigInt!
+  posPricePNS: BigInt!
+  liqLotLNS: BigInt!
+  premiumPnlCNS: BigInt!
+}
+
+type Exchange_InvalidOrderId {
+  id: ID!
+  orderId: BigInt!
+  min: BigInt!
+  max: BigInt!
+}
+
+type Exchange_LastForwardedDescIdReset {
+  id: ID!
+  accountId: BigInt!
+  newDescId: BigInt!
+}
+
+type Exchange_LastTriggeredDescIdReset {
+  id: ID!
+  accountId: BigInt!
+  newDescId: BigInt!
+}
+
+type Exchange_LinkDatastreamConfigured {
+  id: ID!
+  verifierProxy: String!
+}
+
+type Exchange_LinkDsError {
+  id: ID!
+  perpId: BigInt!
+  reason: String!
+}
+
+type Exchange_LinkDsPanic {
+  id: ID!
+  perpId: BigInt!
+  errorCode: BigInt!
+}
+
+type Exchange_LinkPriceUpdated {
+  id: ID!
+  perpId: BigInt!
+  oraclePricePNS: BigInt!
+  timestamp: BigInt!
+}
+
+type Exchange_LiquidationBuyerUpdated {
+  id: ID!
+  liquidationBuyer: String!
+  accountId: BigInt!
+  added: Boolean!
+}
+
+type Exchange_LiquidationParamsUpdated {
+  id: ID!
+  perpId: BigInt!
+  insAmtPer100K: BigInt!
+  liqAmtPer100K: BigInt!
+  userAmtPer100K: BigInt!
+}
+
+type Exchange_LotOutOfRange {
+  id: ID!
+  minLotLNS: BigInt!
+  maxLotLNS: BigInt!
+}
+
+type Exchange_MaintenanceMarginFractionUpdated {
+  id: ID!
+  perpId: BigInt!
+  maintMarginFracHdths: BigInt!
+}
+
+type Exchange_MakerFeeUpdated {
+  id: ID!
+  perpId: BigInt!
+  makerFeePer100K: BigInt!
+}
+
+type Exchange_MakerOrderFilled {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  feeCNS: BigInt!
+  lockedBalanceCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_MakerOrderFilledV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  feeCNS: BigInt!
+  lockedBalanceCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+  builderId: BigInt!
+  builderFeeCNS: BigInt!
+}
+
+type Exchange_MakerOrderSettlementFailed {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  orderType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+  reason: BigInt!
+  lockedBalanceCNS: BigInt!
+  recyclerAccountId: BigInt!
+  recyclerAmountCNS: BigInt!
+  recyclerBalanceCNS: BigInt!
+}
+
+type Exchange_MarginTolUpdated {
+  id: ID!
+  perpId: BigInt!
+  tolerance: BigInt!
+  decimals: BigInt!
+}
+
+type Exchange_MarkExceedsTol {
+  id: ID!
+  perpId: BigInt!
+  markPNS: BigInt!
+  spotOraclePricePNS: BigInt!
+  tolerancePer100k: BigInt!
+}
+
+type Exchange_MarkPriceAgeExceedsMax {
+  id: ID!
+  perpId: BigInt!
+  markTimestamp: BigInt!
+  timestamp: BigInt!
+  maxAgeSec: BigInt!
+}
+
+type Exchange_MarkUpdated {
+  id: ID!
+  perpId: BigInt!
+  pricePNS: BigInt!
+}
+
+type Exchange_MaxMatchesReached {
+  id: ID!
+}
+
+type Exchange_MaxOpenInterestUpdated {
+  id: ID!
+  perpId: BigInt!
+  maxOpenInterestLNS: BigInt!
+}
+
+type Exchange_MaximumAccountOrders {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_MinAccountOpenAmountUpdated {
+  id: ID!
+  minAccountOpenCNS: BigInt!
+}
+
+type Exchange_MinPostUpdated {
+  id: ID!
+  minPostCNS: BigInt!
+}
+
+type Exchange_MinSettleUpdated {
+  id: ID!
+  minSettleCNS: BigInt!
+}
+
+type Exchange_MonitorAdministratorUpdated {
+  id: ID!
+  monitorAdministrator: String!
+  added: Boolean!
+}
+
+type Exchange_MonitorPauseAttempted {
+  id: ID!
+  perpId: BigInt!
+  actualStatus: BigInt!
+  transitioned: Boolean!
+}
+
+type Exchange_OracleAgeExceedsMax {
+  id: ID!
+  perpId: BigInt!
+  oracleTimestamp: BigInt!
+  timestamp: BigInt!
+  maxAgeSec: BigInt!
+}
+
+type Exchange_OracleDisabled {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_OrderBatchCompleted {
+  id: ID!
+  gasLeft: BigInt!
+}
+
+type Exchange_OrderCancelled {
+  id: ID!
+  lockedBalanceCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_OrderCancelledByAdmin {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+}
+
+type Exchange_OrderCancelledByLiquidator {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderId: BigInt!
+  lockedBalanceCNS: BigInt!
+}
+
+type Exchange_OrderChanged {
+  id: ID!
+  orderId: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  expiryBlock: BigInt!
+  lockedBalanceCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_OrderDescIdTooLow {
+  id: ID!
+  lastOrderDescId: BigInt!
+}
+
+type Exchange_OrderDoesNotExist {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+}
+
+type Exchange_OrderExtensionRejected {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_OrderForwardingNotAllowed {
+  id: ID!
+}
+
+type Exchange_OrderForwardingUpdated {
+  id: ID!
+  accountId: BigInt!
+  allowed: Boolean!
+}
+
+type Exchange_OrderPlaced {
+  id: ID!
+  orderId: BigInt!
+  lotLNS: BigInt!
+  lockedBalanceCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_OrderPostFailed {
+  id: ID!
+  reason: BigInt!
+}
+
+type Exchange_OrderRequest {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderDescId: BigInt!
+  orderId: BigInt!
+  orderType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  expiryBlock: BigInt!
+  postOnly: Boolean!
+  fillOrKill: Boolean!
+  immediateOrCancel: Boolean!
+  maxMatches: BigInt!
+  leverageHdths: BigInt!
+  lastExecutionBlock: BigInt!
+  amountCNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+  gasLeft: BigInt!
+}
+
+type Exchange_OrderRequestV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderDescId: BigInt!
+  orderId: BigInt!
+  orderType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  expiryBlock: BigInt!
+  postOnly: Boolean!
+  fillOrKill: Boolean!
+  immediateOrCancel: Boolean!
+  maxMatches: BigInt!
+  leverageHdths: BigInt!
+  lastExecutionBlock: BigInt!
+  amountCNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+  gasLeft: BigInt!
+  extension: String!
+}
+
+type Exchange_OrderSettlementImpliesInsolvent {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  orderType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  perpPositionBalCNS: BigInt!
+  perpInsuranceBalCNS: BigInt!
+  addedPosCollatReqCNS: BigInt!
+  requestedAmountCNS: BigInt!
+}
+
+type Exchange_OrderSizeExceedsAvailableSize {
+  id: ID!
+  orderLotLNS: BigInt!
+  availableLotLNS: BigInt!
+  positionLotLNS: BigInt!
+}
+
+type Exchange_OverCollatDescentThreshUpdated {
+  id: ID!
+  perpId: BigInt!
+  threshHdths: BigInt!
+}
+
+type Exchange_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Exchange_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Exchange_PermissonedCancelParamsUpdated {
+  id: ID!
+  cancelMinOrders: BigInt!
+  cancelSegment: BigInt!
+}
+
+type Exchange_PerpFeeSchedIdSet {
+  id: ID!
+  perpId: BigInt!
+  feeSchedId: BigInt!
+}
+
+type Exchange_PerpPositionBalCreditPositiveSevere {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  realizedPricePNS: BigInt!
+  lotLNS: BigInt!
+  userProceedsToPosition: Boolean!
+  buyToLiquidate: Boolean!
+  creditPerpBalCNS: BigInt!
+}
+
+type Exchange_PositionAdministratorUpdated {
+  id: ID!
+  positionAdministrator: String!
+  added: Boolean!
+}
+
+type Exchange_PositionClosed {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  pricePNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+}
+
+type Exchange_PositionCollateralDecreased {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  markPricePNS: BigInt!
+  impactAdjPricePNS: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  startEntryPricePNS: BigInt!
+  endEntryPricePNS: BigInt!
+  effBmfHdths: BigInt!
+  decreaseCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_PositionDecreased {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+}
+
+type Exchange_PositionDeleveraged {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  forceClose: Boolean!
+  positionType: BigInt!
+  entryPricePNS: BigInt!
+  markPricePNS: BigInt!
+  deleveragePricePNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_PositionDeleveragedV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  forceClose: Boolean!
+  positionType: BigInt!
+  entryPricePNS: BigInt!
+  markPricePNS: BigInt!
+  deleveragePricePNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+  priceResiduePNSQ16: BigInt!
+}
+
+type Exchange_PositionDoesNotExist {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+}
+
+type Exchange_PositionIncreased {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  leverageHdths: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  pnlCollateralizedCNS: BigInt!
+  premiumPnlSettledCNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+  pricePNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  insFeeCNS: BigInt!
+  protFeeCNS: BigInt!
+}
+
+type Exchange_PositionIncreasedV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  leverageHdths: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  pnlCollateralizedCNS: BigInt!
+  premiumPnlSettledCNS: BigInt!
+  maxNegPnlCollatBPS: BigInt!
+  pricePNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  insFeeCNS: BigInt!
+  protFeeCNS: BigInt!
+  priceResiduePNSQ16: BigInt!
+}
+
+type Exchange_PositionInverted {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  leverageHdths: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+  pnlCollateralizedCNS: BigInt!
+  pricePNS: BigInt!
+  startLotLNS: BigInt!
+  endLotLNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+  insFeeCNS: BigInt!
+  protFeeCNS: BigInt!
+}
+
+type Exchange_PositionLiquidated {
+  id: ID!
+  perpId: BigInt!
+  posAccountId: BigInt!
+  positionType: BigInt!
+  markPricePNS: BigInt!
+  liqPricePNS: BigInt!
+  liqLotLNS: BigInt!
+  posLotLNS: BigInt!
+  deltaPnlCNS: BigInt!
+  fundingCNS: BigInt!
+  posAmountCNS: BigInt!
+  posDepositCNS: BigInt!
+  accAmountCNS: BigInt!
+  accBalanceCNS: BigInt!
+  onOrderBook: Boolean!
+}
+
+type Exchange_PositionLiquidationCredit {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  startDepositCNS: BigInt!
+  endDepositCNS: BigInt!
+}
+
+type Exchange_PositionOpened {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  leverageHdths: BigInt!
+  depositCNS: BigInt!
+  pnlCollateralizedCNS: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  insFeeCNS: BigInt!
+  protFeeCNS: BigInt!
+}
+
+type Exchange_PositionOpenedV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  positionType: BigInt!
+  leverageHdths: BigInt!
+  depositCNS: BigInt!
+  pnlCollateralizedCNS: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  insFeeCNS: BigInt!
+  protFeeCNS: BigInt!
+  priceResiduePNSQ16: BigInt!
+}
+
+type Exchange_PositionUnwound {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  markPricePNS: BigInt!
+  positionType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  depositCNS: BigInt!
+  positionFmvCNS: BigInt!
+  paymentCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_PositionUnwoundV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  markPricePNS: BigInt!
+  positionType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  depositCNS: BigInt!
+  positionFmvCNS: BigInt!
+  paymentCNS: BigInt!
+  balanceCNS: BigInt!
+  priceResiduePNSQ16: BigInt!
+}
+
+type Exchange_PositionUnwoundWithoutPayment {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  markPricePNS: BigInt!
+  positionType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  depositCNS: BigInt!
+  positionFmvCNS: BigInt!
+  amountOwedCNS: BigInt!
+}
+
+type Exchange_PositionUnwoundWithoutPaymentV2 {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  markPricePNS: BigInt!
+  positionType: BigInt!
+  pricePNS: BigInt!
+  lotLNS: BigInt!
+  depositCNS: BigInt!
+  positionFmvCNS: BigInt!
+  amountOwedCNS: BigInt!
+  priceResiduePNSQ16: BigInt!
+}
+
+type Exchange_PostOrderUnderMinimum {
+  id: ID!
+  orderAmountCNS: BigInt!
+  minAmountCNS: BigInt!
+}
+
+type Exchange_PriceAdministratorUpdated {
+  id: ID!
+  priceAdministrator: String!
+  added: Boolean!
+}
+
+type Exchange_PriceMaxAgeUpdated {
+  id: ID!
+  perpId: BigInt!
+  maxAgeSec: BigInt!
+}
+
+type Exchange_PriceOutOfRange {
+  id: ID!
+  minPricePNS: BigInt!
+  maxPricePNS: BigInt!
+}
+
+type Exchange_PriceSetDuringTriggerExec {
+  id: ID!
+  triggerPricePNS: BigInt!
+}
+
+type Exchange_PriceTolUpdated {
+  id: ID!
+  perpId: BigInt!
+  tolPer100k: BigInt!
+}
+
+type Exchange_ProtocolBalanceDeposit {
+  id: ID!
+  amountCNS: BigInt!
+}
+
+type Exchange_ProtocolBalanceWithdraw {
+  id: ID!
+  amountCNS: BigInt!
+}
+
+type Exchange_RecycleBalanceInsufficientSevere {
+  id: ID!
+  accountId: BigInt!
+  perpId: BigInt!
+  orderId: BigInt!
+  recycleFeeCNS: BigInt!
+  recycleBalanceCNS: BigInt!
+}
+
+type Exchange_RecycleFeeToAccount {
+  id: ID!
+  accountId: BigInt!
+  perpId: BigInt!
+  orderId: BigInt!
+  recycleFeeCNS: BigInt!
+  recycleBalanceCNS: BigInt!
+}
+
+type Exchange_RecycleFeeToProtocol {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+  recycleFeeCNS: BigInt!
+  recycleBalanceCNS: BigInt!
+}
+
+type Exchange_RecycleFeeUpdated {
+  id: ID!
+  recycleFeeCNS: BigInt!
+}
+
+type Exchange_ReportAgeExceedsLastUpdate {
+  id: ID!
+  perpId: BigInt!
+  lastUpdateTimestamp: BigInt!
+  reportValidFromTimestamp: BigInt!
+}
+
+type Exchange_ReportExpiresTooSoon {
+  id: ID!
+  perpId: BigInt!
+  expiresAt: BigInt!
+  minRequired: BigInt!
+}
+
+type Exchange_ReportFromFuture {
+  id: ID!
+  perpId: BigInt!
+  reportTimestamp: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type Exchange_ReportPriceIsNegative {
+  id: ID!
+  perpId: BigInt!
+  reportPrice: BigInt!
+}
+
+type Exchange_ResidueBalanceInsufficient {
+  id: ID!
+  perpId: BigInt!
+  requestedAmountCNS: BigInt!
+  positionBalanceCNS: BigInt!
+}
+
+type Exchange_ResidueTransferred {
+  id: ID!
+  perpId: BigInt!
+  residueAmountCNS: BigInt!
+  positionBalanceCNS: BigInt!
+}
+
+type Exchange_TakerFeeUpdated {
+  id: ID!
+  perpId: BigInt!
+  takerFeePer100K: BigInt!
+}
+
+type Exchange_TakerOrderFilled {
+  id: ID!
+  entryPricePNS: BigInt!
+  collatPricePNS: BigInt!
+  pnlPricePNS: BigInt!
+  lotLNS: BigInt!
+  feeCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_TakerOrderFilledV2 {
+  id: ID!
+  entryPricePNS: BigInt!
+  collatPricePNS: BigInt!
+  pnlPricePNS: BigInt!
+  lotLNS: BigInt!
+  feeCNS: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+  builderId: BigInt!
+  builderFeeCNS: BigInt!
+}
+
+type Exchange_ToleranceAdministratorUpdated {
+  id: ID!
+  toleranceAdministrator: String!
+  added: Boolean!
+}
+
+type Exchange_TransferAccountToProtocol {
+  id: ID!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_TransferPerpInsToProtocol {
+  id: ID!
+  perpId: BigInt!
+  amountCNS: BigInt!
+}
+
+type Exchange_TransferPerpPosToProtocol {
+  id: ID!
+  perpId: BigInt!
+  amountCNS: BigInt!
+}
+
+type Exchange_TransferProtocolToAccount {
+  id: ID!
+  accountId: BigInt!
+  amountCNS: BigInt!
+  balanceCNS: BigInt!
+}
+
+type Exchange_TransferProtocolToPerp {
+  id: ID!
+  perpId: BigInt!
+  amountCNS: BigInt!
+  toInsuranceFund: Boolean!
+}
+
+type Exchange_TransferProtocolToRecycleBal {
+  id: ID!
+  amountCNS: BigInt!
+}
+
+type Exchange_TriggerDescIdTooLow {
+  id: ID!
+  lastTriggerDescId: BigInt!
+}
+
+type Exchange_TriggerOrderExecution {
+  id: ID!
+}
+
+type Exchange_TriggerOrderRequest {
+  id: ID!
+  triggerPricePNS: BigInt!
+  triggerPriceCondition: BigInt!
+  triggerRequestId: BigInt!
+  triggerPositionId: BigInt!
+}
+
+type Exchange_UnableToCancelOrder {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+}
+
+type Exchange_UnityDescentThreshUpdated {
+  id: ID!
+  perpId: BigInt!
+  threshHdths: BigInt!
+}
+
+type Exchange_UnspecifiedCollateral {
+  id: ID!
+}
+
+type Exchange_UnwindCompleted {
+  id: ID!
+  perpId: BigInt!
+  positionsUnwound: BigInt!
+  perpPositionBalanceCNS: BigInt!
+  insuranceBalanceCNS: BigInt!
+}
+
+type Exchange_UnwindContractTrigger {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_UnwindInitializationCleared {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_UnwindInitialized {
+  id: ID!
+  perpId: BigInt!
+  sumPositiveFmvCNS: BigInt!
+}
+
+type Exchange_UnwindInsufficientBalance {
+  id: ID!
+  perpId: BigInt!
+  accountId: BigInt!
+  perpPositionBalanceCNS: BigInt!
+  paymentCNS: BigInt!
+}
+
+type Exchange_UnwindIterationCompleted {
+  id: ID!
+  perpId: BigInt!
+  positionsUnwound: BigInt!
+  perpPositionBalanceCNS: BigInt!
+  insuranceBalanceCNS: BigInt!
+}
+
+type Exchange_UnwindPreparationCleared {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_UnwindPrepared {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_UnwindProcessInProgress {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_UpdateOracleFailed {
+  id: ID!
+  perpId: BigInt!
+}
+
+type Exchange_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
+type Exchange_ValueExceedsMaximum {
+  id: ID!
+  value: BigInt!
+  maximum: BigInt!
+}
+
+type Exchange_WRLSMinWithdrawLimitUpdated {
+  id: ID!
+  limitCNS: BigInt!
+}
+
+type Exchange_WRLSThousandthsTvlUpdated {
+  id: ID!
+  thousandthsTvl: BigInt!
+}
+
+type Exchange_WhitelistAddress {
+  id: ID!
+  addr: String!
+  whitelisted: Boolean!
+}
+
+type Exchange_WhitelistingEnabledChanged {
+  id: ID!
+  enabled: Boolean!
+}
+
+type Exchange_WithdrawRateLimitBypassSet {
+  id: ID!
+  addr: String!
+  enabled: Boolean!
+}
+
+type Exchange_WithdrawRateLimitForceReset {
+  id: ID!
+  newExpiryBlock: BigInt!
+  newLimitCNS: BigInt!
+  perBlockCNS: BigInt!
+}
+
+type Exchange_WithdrawRateLimitReset {
+  id: ID!
+  newExpiryBlock: BigInt!
+  newLimitCNS: BigInt!
+  perBlockCNS: BigInt!
+}
+
+type Exchange_WrongAccountForOrder {
+  id: ID!
+  perpId: BigInt!
+  orderId: BigInt!
+  accountId: BigInt!
+}
+
